@@ -15,7 +15,7 @@ var_dump($hermione);
 // $hermione->manaAttack($drago); */
 
 $characters = CharacterManager::getAllCharacters();
-var_dump($characters);
+// var_dump($characters);
 
 ?>
 
@@ -28,6 +28,7 @@ var_dump($characters);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -39,29 +40,48 @@ var_dump($characters);
         <tr>
             <td>
                 <h1>
-                    <?php // echo $harry->getName(); ?>
+                    <?php // echo $harry->getName(); 
+                    ?>
                 </h1>
             </td>
             <td>
                 <h1>
-                    <?php // echo $harry->getHp(); ?>
+                    <?php // echo $harry->getHp(); 
+                    ?>
                 </h1>
             </td>
         </tr>
         <tr>
             <td>
                 <h1>
-                    <?php // echo $drago->getName(); ?>
+                    <?php // echo $drago->getName(); 
+                    ?>
                 </h1>
             </td>
             <td>
                 <h1>
-                    <?php // echo $drago->getHp(); ?>
+                    <?php // echo $drago->getHp(); 
+                    ?>
                 </h1>
             </td>
         </tr>
     </table>
-    <?//= $harry; ?> -->
+    <? //= $harry; 
+    ?> -->
+    <div class="row">
+        <?php
+        foreach ($characters as $character) { ?>
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $character->getName(); ?></h5>
+                    </div>
+                </div>
+            </div>
+    </div>
+<?php } ?>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
