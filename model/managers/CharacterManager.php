@@ -14,4 +14,13 @@ class CharacterManager
         $results = $query->fetchAll(PDO::FETCH_CLASS, 'Character');
         return $results;
     }
+
+    public static function getCharacter($id)
+    {
+        $db = dbconnect();
+        $query = $db->prepare("SELECT * FROM characters WHERE id_character = ?");
+        $query->execute([$id]);
+        $result = $query->fetchObject('Character');
+        return $result;
+    }
 }

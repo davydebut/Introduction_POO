@@ -19,19 +19,10 @@ $characters = CharacterManager::getAllCharacters();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+require 'views/indexView.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-</head>
-
-<body>
     <!-- <h1>Test</h1> -->
     <?php
     // $harry->autoAttack($drago);
@@ -68,20 +59,3 @@ $characters = CharacterManager::getAllCharacters();
     </table>
     <? //= $harry; 
     ?> -->
-    <div class="row">
-        <?php
-        foreach ($characters as $character) { ?>
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $character->getName(); ?></h5>
-                    </div>
-                </div>
-            </div>
-    </div>
-<?php } ?>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
